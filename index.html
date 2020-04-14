@@ -1389,6 +1389,9 @@
               </button>
               <div class="dropdown-content" id="industry-selector"></div>
           </div>
+          <div id="save-button-container">
+            <button class="switch-button" id="save-button">Save Image</button>
+          </div>
         </div>
       </div>
     </div>
@@ -4097,7 +4100,7 @@
                   };
                 });
             }
-                              function textWrap(text_data, percentage, limit = 6) {
+                  function textWrap(text_data, percentage, limit = 6) {
                     result = [];
                     if (text_data.length > limit) {
                       if (text_data.length >= (limit - 1) * 2) {
@@ -5206,7 +5209,7 @@
                 return d.opacity;
               });
             }
-                              function showOppSpaceTooltip(segment_data, clicked = "") {
+                function showOppSpaceTooltip(segment_data, clicked = "") {
                     desc.forEach(function (v) {
                       if (
                         segment_data.data.value.key ===
@@ -5752,11 +5755,7 @@
                         return 0;
                       }
                     })
-                    .style("cursor", "pointer")
-                    .on("mouseover", function (d) {
-                      showNodeTooltip(d);
-                    })
-                    .on("mouseout", hideNodeTooltip);
+
   
                   var tmp_acquired = tmp_chartSVG
                     .selectAll("nodes-acquired")
@@ -5808,11 +5807,6 @@
                         return 0;
                       }
                     })
-                    .style("cursor", "pointer")
-                    .on("mouseover", function (d) {
-                      showNodeTooltip(d);
-                    })
-                    .on("mouseout", hideNodeTooltip);
   
                   var name = chartPieData[i].data.value.key;
   
@@ -5872,7 +5866,7 @@
   
             // Set-up the export button
             d3.select("#save-button").on("click", function() {
-              save_split();
+              //save_split();
   
               var svgString = getSVGString(svg.node());
               var name = "";
